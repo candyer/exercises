@@ -31,7 +31,7 @@ def make_shape(func, width=300, height=100):
 # 	this function will show you a horizontal line
 # 	"""
 # 	for w in range(0, width):
-# 		pixels[w, height / 2] = black_pixel
+# 		pixels[w, height / 2] = black_pixel   # "height / 2" -> keep the line in the middle
 
 # make_shape(horizontal_line)
 
@@ -42,7 +42,7 @@ def make_shape(func, width=300, height=100):
 # 	this function will show you a vertical line
 # 	"""
 # 	for h in range(0, height):
-# 		pixels[width / 2, h] = black_pixel
+# 		pixels[width / 2, h] = black_pixel   # "width / 2" -> keep the line in the middle
 
 # make_shape(vertical_line)
 
@@ -75,19 +75,32 @@ def make_shape(func, width=300, height=100):
 
 
 # make it run with stripes
-def stripes(pixels, width, height, black_pixel):
+# def stripes(pixels, width, height, black_pixel):
+# 	"""
+# 	this function will show you stripes
+# 	"""
+# 	for h in range(0, height, 10):    # "10" -> the distance between the stripes
+# 		for w in range(0, width):
+# 			pixels[w, h] = black_pixel
+
+# make_shape(stripes)
+
+
+# make fat stripes
+def fat_stripes(pixels, width, height, black_pixel):
+	""""
+	this function will show you fat stripes
 	"""
-	this function will show you stripes
-	"""
-	for h in range(0, height, 5):
-		for w in range(0, width):
-			pixels[w, h] = black_pixel
+	stripe_size = 38      
+	for h in range(0, height, stripe_size):
+		for i in range(h, h + stripe_size / 2 + 1):  
+			if i < height:
+				for w in range(0, width):
+ 					pixels[w, i] = black_pixel
+			
 
-make_shape(stripes)
+make_shape(fat_stripes)
 
-
-# for w in range(0, width):
-# 		pixels[w, height / 2] = black_pixel
 
 # make it run with a chess board
 
@@ -100,6 +113,224 @@ make_shape(stripes)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# mine
+# def example_chess(pixels, width, height, black_pixel):
+# 	''' let's see how much time it takes her to discover the solution is here '''
+# 	thick_w = width / 8.0
+# 	thick_h = height / 8.0
+# 	for w in range(width):
+# 		for h in range(height):
+# 			if (w // thick_w) % 2 == (h // thick_h) % 2:
+# 				pixels[w, h] = black_pixel
+
+
+# make_shape(example_chess)
 
 
 
