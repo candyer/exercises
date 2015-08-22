@@ -25,16 +25,24 @@ def make_shape(func, width=300, height=100):
 # make_shape(example_random_pixels)
 
 # make it run with an horizontal line
-def horixontal_line(pixels, width, height, black_pixel):
+def horizontal_line(pixels, width, height, black_pixel):
 	"""
 	this function will show you a horizontal line
 	"""
-	for h in range(0, width):
-		pixels[h, 0] = black_pixel
+	for w in range(0, width):
+		pixels[w, height / 2] = black_pixel
 
-make_shape(horixontal_line)
+make_shape(horizontal_line)
 
 # make it run with a vertical line
+def vertical_line(pixels, width, height, black_pixel):
+	"""
+	this function will show you a vertical line
+	"""
+	for h in range(0, height):
+		pixels[width / 2, h] = black_pixel
+
+make_shape(vertical_line, width=500)
 		
 # make it run with a cross
 
