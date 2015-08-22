@@ -24,31 +24,61 @@ def make_shape(func, width=300, height=100):
 # # we run it with example_random_pixels
 # make_shape(example_random_pixels)
 
-# make it run with an horizontal line
-def horizontal_line(pixels, width, height, black_pixel):
-	"""
-	this function will show you a horizontal line
-	"""
-	for w in range(0, width):
-		pixels[w, height / 2] = black_pixel
+# # make it run with an horizontal line
+# def horizontal_line(pixels, width, height, black_pixel):
+# 	"""
+# 	this function will show you a horizontal line
+# 	"""
+# 	for w in range(0, width):
+# 		pixels[w, height / 2] = black_pixel
 
-make_shape(horizontal_line)
+# make_shape(horizontal_line)
 
-# make it run with a vertical line
-def vertical_line(pixels, width, height, black_pixel):
-	"""
-	this function will show you a vertical line
-	"""
-	for h in range(0, height):
-		pixels[width / 2, h] = black_pixel
+# # make it run with a vertical line
+# def vertical_line(pixels, width, height, black_pixel):
+# 	"""
+# 	this function will show you a vertical line
+# 	"""
+# 	for h in range(0, height):
+# 		pixels[width / 2, h] = black_pixel
 
-make_shape(vertical_line, width=500)
+# make_shape(vertical_line)
 		
 # make it run with a cross
+def cross(pixels, width, height, black_pixel):
+	"""
+	this function will show you a cross
+	it only works if the image is a square
+	"""
+	# for w in range(0, width):
+	# 	for h in range(0, height): 
+	# 		w = h
+	# 		pixels[w, h] = black_pixel	
+	w = 0
+	h = 0
+	while w < width and h < height:
+		pixels[w, h] = black_pixel
+		w = w + 1
+		h = h + 1
 
+	w = 0
+	h = 700
+	while w < width and h >= 0:
+		pixels[w, h-1] = black_pixel
+		w = w + 1
+		h = h - 1
+
+make_shape(cross, width=700, height=700)		
 
 # make it run with stripes
+# def stripes(pixels, width, height, black_pixel):
+# 	"""
+# 	this function will show you stripes
+# 	"""
+# 	for h in range(0, height) and w in (0, width, 2):
+# 		pixels[width, h] = black_pixel
 
+# make_shape(stripes)
 
 # make it run with a chess board
 
