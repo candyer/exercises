@@ -15,21 +15,27 @@ def make_shape(func, width=300, height=100):
 	func(pixels, width, height, black_pixel)
 	img.show()
 
-def example_random_pixels(pixels, width, height, black_pixel):
-	''' example drawing function that put 2000 points at random '''
-	from random import randint
-	for i in range(2000):
-		pixels[randint(0, width - 1), randint(0, height - 1)] = black_pixel
+# def example_random_pixels(pixels, width, height, black_pixel):
+# 	''' example drawing function that put 2000 points at random '''
+# 	from random import randint
+# 	for i in range(2000):
+# 		pixels[randint(0, width - 1), randint(0, height - 1)] = black_pixel
 
-# we run it with example_random_pixels
-make_shape(example_random_pixels)
+# # we run it with example_random_pixels
+# make_shape(example_random_pixels)
 
 # make it run with an horizontal line
+def horixontal_line(pixels, width, height, black_pixel):
+	"""
+	this function will show you a horizontal line
+	"""
+	for h in range(0, width):
+		pixels[h, 0] = black_pixel
 
+make_shape(horixontal_line)
 
 # make it run with a vertical line
-
-
+		
 # make it run with a cross
 
 
