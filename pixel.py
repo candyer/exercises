@@ -76,9 +76,7 @@ def make_shape(func, width=300, height=100):
 
 # make it run with stripes
 # def stripes(pixels, width, height, black_pixel):
-# 	"""
-# 	this function will show you stripes
-# 	"""
+# 	""" this function will show you stripes """
 # 	for h in range(0, height, 10):    # "10" -> the distance between the stripes
 # 		for w in range(0, width):
 # 			pixels[w, h] = black_pixel
@@ -87,23 +85,51 @@ def make_shape(func, width=300, height=100):
 
 
 # make fat stripes
-def fat_stripes(pixels, width, height, black_pixel):
-	""""
-	this function will show you fat stripes
-	"""
-	stripe_size = 38      
-	for h in range(0, height, stripe_size):
-		for i in range(h, h + stripe_size / 2 + 1):  
-			if i < height:
-				for w in range(0, width):
- 					pixels[w, i] = black_pixel
+# def fat_stripes(pixels, width, height, black_pixel):
+# 	""""  this function will show you fat stripes """
+# 	stripe_size = 25      
+# 	for h in range(0, height, stripe_size):
+# 		for i in range(h, h + stripe_size / 2 + 1):  
+# 			if i < height:
+# 				for w in range(0, width):
+#  					pixels[w, i] = black_pixel
 			
-
-make_shape(fat_stripes)
+# make_shape(fat_stripes)
 
 
 # make it run with a chess board
+# def chess_board(pixels, width, height, black_pixel, white_pixel=(255,255,255)):
+	# """ this funtion will show you a chess board """
+# 	horizontal_stripe_size = 35     
+# 	for h in range(0, height, horizontal_stripe_size):
+# 		for i in range(h, h + horizontal_stripe_size / 2 + 1):  
+# 			if i < height:
+# 				for w in range(0, width):
+#  					pixels[w, i] = black_pixel
 
+#  	vertical_stripe_size = 35    
+# 	for w in range(0, width, vertical_stripe_size):
+# 		for j in range(w, w + vertical_stripe_size / 2 + 1):  
+# 			if j < width:
+# 				for h in range(0, height):
+# 					pixels[j, h] = black_pixel
+# 					for n in range(0, height, horizontal_stripe_size):
+# 						for m in range(n, n + horizontal_stripe_size / 2 + 1):
+# 							if m < height:
+# 								pixels[j, m] = white_pixel
+ 				
+# make_shape(chess_board)
+
+# better solution
+# def example_chess(pixels, width, height, black_pixel):
+# 	thick_w = width / 8.0
+# 	thick_h = height / 8.0
+# 	for w in range(width):
+# 		for h in range(height):
+# 			if (w // thick_w) % 4 == (h // thick_h) % 4:
+# 				pixels[w, h] = black_pixel
+
+# make_shape(example_chess)
 
 # make it run with a circle :)
 
@@ -112,225 +138,6 @@ make_shape(fat_stripes)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# mine
-# def example_chess(pixels, width, height, black_pixel):
-# 	''' let's see how much time it takes her to discover the solution is here '''
-# 	thick_w = width / 8.0
-# 	thick_h = height / 8.0
-# 	for w in range(width):
-# 		for h in range(height):
-# 			if (w // thick_w) % 2 == (h // thick_h) % 2:
-# 				pixels[w, h] = black_pixel
-
-
-# make_shape(example_chess)
 
 
 
