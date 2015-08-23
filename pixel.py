@@ -143,7 +143,7 @@ def black_circle(pixels, width, height, black_pixel):
 		radius = height / 2
 	else:
 		radius = width / 2
-	middle_pixel = [width / 2 , height / 2]
+	# or radius = min(width, height) / 2 
 	for h in range(height):
 		for w in range(width):	
 			distance = math.sqrt((w - width / 2)**2 + (h - height / 2)**2)
