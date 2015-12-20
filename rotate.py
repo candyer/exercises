@@ -1,5 +1,6 @@
 def rotate1(l, n):
-  """create a function that return a rotated list"""
+  """create a function that return a rotated list. l is a list; n is an int
+  """
 	if len(l) == 0 or len(l) == 1:
 		return l
 	if n <= 0:
