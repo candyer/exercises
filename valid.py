@@ -21,7 +21,6 @@ def valid_month(month):
     if cap_month in months:
         return cap_month
         
-        
 # solution 2
 def valid_month(month):
     if month:
@@ -34,7 +33,6 @@ print valid_month("aPril")  # April
 print valid_month("foo") # None
 print valid_month("") # None
 print valid_month("maY") # May
-
 
 # solution 3
 def valid_month(month):
@@ -66,3 +64,20 @@ print valid_day('3') # 3
 print valid_day('foo') # None
 
 
+
+
+Modify the valid_year() function to verify whether the string a user enters is 
+a valid year. If the passed in parameter 'year' is not a valid year, return None.
+If 'year' is a valid year, then return the year as a number. 
+Assume a year is valid if it is a number between 1900 and 2020.
+
+def valid_year(year):
+    if year and year.isdigit():
+        year = int(year)
+        if 1900 < year < 2020:
+            return year
+
+print valid_year('1998')  # 1998
+print valid_year('-1')  # None
+print valid_year('foo')  # None
+print valid_year('fghjkl')  # None
