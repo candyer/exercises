@@ -1,4 +1,4 @@
-
+# solution 1
 import heapq
 
 def rain(l):
@@ -17,6 +17,47 @@ def rain(l):
         left = l[ : seperate + 1]
         right = l[seperate : ]
         return rain(left) + rain(right)
+
+
+
+#solution 2
+def biggest_left(l, i):
+	return max(l[:i+1])
+
+def biggest_right(l, i):
+	return max(l[i:])
+
+def rain(l):
+	total = 0
+	for i, height in enumerate(l):
+		left = biggest_left(l, i)
+		right = biggest_right(l, i)
+		water = min(left, right) - height
+		total += water
+	return total
+
+
+
+#solution 3
+def biggest_lefts(l):
+	lefts = [0]
+	for height in l:
+		lefts.append(max(lefts[-1], height))
+	return lefts[1:]
+
+def biggest_rights(l):
+	return list(reversed(biggest_lefts(reversed(l))))
+
+def rain(l):
+	total = 0
+	lefts = biggest_lefts(l)
+	rights = biggest_rights(l)
+	for i, height in enumerate(l):
+		left = lefts[i]
+		right = rights[i]
+		water = min(left, right) - height
+		total += water
+	return total
 
 
 print rain([]) #0
