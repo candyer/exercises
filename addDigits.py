@@ -16,6 +16,12 @@ def addDigits1(num):
     for i in range(len(str(num))):
       res += int(str(num)[i])
     return addDigits1(res)
+    
+print addDigits1(3457) #1
+print addDigits1(4568) #5
+print addDigits1(3457+4568) #6
+print addDigits1(3) #3
+print addDigits1(23456789) #8
 
 
 def addDigits2(num):
@@ -26,6 +32,12 @@ def addDigits2(num):
     if len(str(num)) == 1:
         return num
     return addDigits2(sum([int(i) for i in list(str(num))]))
+    
+print addDigits2(3457) #1
+print addDigits2(4568) #5
+print addDigits2(3457+4568) #6
+print addDigits2(3) #3
+print addDigits2(23456789) #8
 
 
 def addDigits3(num):
@@ -37,6 +49,12 @@ def addDigits3(num):
     if num == 0:
         return 0
     return (num-1)%9 + 1
+    
+print addDigits3(3457) #1
+print addDigits3(4568) #5
+print addDigits3(3457+4568) #6
+print addDigits3(3) #3
+print addDigits3(23456789) #8
 
 
 def addDigits4(num):
@@ -52,25 +70,6 @@ def addDigits4(num):
             num /=10
         num = res
     return num
-
-
-print addDigits1(3457) #1
-print addDigits1(4568) #5
-print addDigits1(3457+4568) #6
-print addDigits1(3) #3
-print addDigits1(23456789) #8
-
-print addDigits2(3457) #1
-print addDigits2(4568) #5
-print addDigits2(3457+4568) #6
-print addDigits2(3) #3
-print addDigits2(23456789) #8
-
-print addDigits3(3457) #1
-print addDigits3(4568) #5
-print addDigits3(3457+4568) #6
-print addDigits3(3) #3
-print addDigits3(23456789) #8
 
 print addDigits4(3457) #1
 print addDigits4(4568) #5
