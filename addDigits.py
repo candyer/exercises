@@ -61,7 +61,6 @@ def addDigits4(num):
     """
     :type num: int
     :rtype: int
-    without any loop/recursion in O(1) runtime
     """
     while num > 9:
         res = 0
