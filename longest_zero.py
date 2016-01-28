@@ -7,7 +7,7 @@ def longest_zero(array):
             count = 0
         else:
             count += 1
-        sequence.append(count)
+            sequence.append(count)
     return max(sequence)
 
 
