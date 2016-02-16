@@ -58,7 +58,7 @@ def findDuplicate(nums):
     #         return num
     #     d.add(num)
 
-    ######  O(1) space, O(nlogn) runnig time. good!
+    ######  O(1) space, O(nlogn) runnig time.
     if nums == []: return 0
     nums.sort()
     for i in range(len(nums)-1):
