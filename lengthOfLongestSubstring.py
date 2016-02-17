@@ -11,7 +11,6 @@ def lengthOfLongestSubstring(s):
     :type s: str
     :rtype: int
     """
-
     start = 0
     longest = 0
     dicts = {}
@@ -22,6 +21,7 @@ def lengthOfLongestSubstring(s):
             longest = max(longest, i - start + 1)
         dicts[s[i]] = i
     return longest
+
 
 print lengthOfLongestSubstring('') #0
 print lengthOfLongestSubstring('dce') #3
