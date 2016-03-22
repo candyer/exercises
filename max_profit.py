@@ -36,8 +36,25 @@ def maxProfit(prices):
 
 
     ## solution two, O(n)
-    return sum([x - y for x, y in zip(prices[1:], prices) if x > y])
+    if len(prices) <2: return 0
 
+    new_list = []
+    start = 0
+    prices += [-1]
+    for i in range(len(prices)-1):
+        if prices[i] > prices[i+1]:
+            sublist = prices[start:i+1]
+            start = i+1
+            new_list.append(sublist) 
+
+    max_profit = 0
+    for sublist in new_list:
+        max_profit+= sublist[-1] - sublist[0]
+    return max_profit
+
+
+    ## solution three, O(n)
+    return sum([x - y for x, y in zip(prices[1:], prices) if x > y])
 
 
 print maxProfit([]) #0
