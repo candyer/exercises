@@ -36,7 +36,6 @@ def maxProfit(prices):
 
 
     ## solution two, O(n)
-    if len(prices) < 2: return 0
     return sum([x - y for x, y in zip(prices[1:], prices) if x > y])
 
 
