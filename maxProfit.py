@@ -27,7 +27,7 @@ def maxProfit(prices):
 
    ## Solution two, O(n)
    
-    if len(prices) == 0 or len(prices) == 1: return 0
+    if len(prices) < 2: return 0
         
     mins = []
     small = smallest = prices[0]
@@ -49,7 +49,7 @@ def maxProfit(prices):
 
    ## Solution three, O(n)
 
-    if len(prices) == 0 or len(prices) == 1: return 0
+    if len(prices) < 2: return 0
     
     maxes = []
     big = bigest = 0
@@ -71,7 +71,7 @@ def maxProfit(prices):
 
 
    ## Solution four, O(n)  
-    if len(prices) == 0 or len(prices) == 1: return 0
+    if len(prices) < 2: return 0
 
     maxes = [None] * len(prices)
     big = float("-inf")
