@@ -8,7 +8,22 @@
 # (ie, you must sell the stock before you buy again).
 
 def maxProfit(prices):
+    ##solution one    Brute force  O(n^4)
+    best = 0
+    n = len(prices)
+    for i in range(n):
+        for j in range(i, n):
+            profit1 = max(0, prices[j] - prices[i])
+            for k in range(j, n):
+                for l in range(k, n):
+                    profit2 = max(0, prices[l] - prices[k])
+                    total = profit1 + profit2
+                    best = max(best, total)
+    return best
 
+
+
+    ##solution two  
     if len(prices)==0: return 0
     n = len(prices)
 
@@ -30,6 +45,9 @@ def maxProfit(prices):
             res = before[k] + after[k]
     return res
 
+
+print maxProfit([1,100]) #99
+print maxProfit([]) #0
 print maxProfit([2,3,6,1,7,9,8,10,7,9,3,6,7,9,2,8]) #15
 print maxProfit([2,3,6,2,7,1,7,9,8,10]) #14
 print maxProfit([2,3,6,2,7,10,1,11]) #18
