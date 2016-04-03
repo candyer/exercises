@@ -4,7 +4,6 @@
 # Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
 
-
 #solution 1  toooo slow
 import itertools
 def climbStairs(n):
@@ -22,9 +21,9 @@ def climbStairs(n):
     return total
 
 
-
 #solution 2  toooo slow  O(n**2)
 def factorial(n):
+    """ this function can be replaced by 'math.factorial(n)'  """
     total = 1
     while n > 0:
         total *= n
@@ -33,19 +32,18 @@ def factorial(n):
 
 def combinations(a,b):
     """ a>=b """
-    return factorial(a)/(factorial(b)*factorial(a-b))
+    assert a >= b, 'you cannot choose {} elements from {}'.format(a,b)
+    return factorial(a) / (factorial(b) * factorial( a - b ))
+
+# print combinations(10,3) #120
+# print combinations(10,30) #AssertionError: you cannot choose 10 elements from 30
 
 def climbStairs(n):
-    """
-    :type n: int
-    :rtype: int
-    """
     total = 0
     for nums_2 in range(n/2 + 1):
-        nums_1 = n - nums_2*2
-        total += combinations(nums_1+nums_2, nums_2)
+        nums_1 = n - nums_2 * 2
+        total += combinations(nums_1 + nums_2, nums_2)
     return total
-
 
 
 #solution 3-1  brute force  O(2**n)
@@ -56,9 +54,9 @@ def climbStairs(n):
     """
     if n == 0:
         return 1
-    num = climbStairs(n-1)
+    num = climbStairs(n - 1)
     if n >= 2:
-        num += climbStairs(n-2)
+        num += climbStairs(n - 2)
     return num
 
 
@@ -79,28 +77,30 @@ def climbStairs(n, current=[]):
 # print climbStairs(5)
 
 
-
 #solution 4-1 dynamic programming using memoization  O(n) running time, O(n) space
-def new(n):
-    memory = {}
+def memox(n):
+    mrmory = {}
 
-    def climbStairs(n, current=[]):
-        """
-        :type n: int
-        :rtype: int
-        """
-        print 'working on size {} for path {}'.format(n, current)
+    def _(n):
         if n in memory:
             return memory[n]
-        if n == 0:
-            return 1
-        num = climbStairs(n-1, current + [1])
-        if n >= 2:
-            num += climbStairs(n-2, current + [2])
         memory[n] = num
-        return num
 
-    return climbStairs(n)
+    return -()
+
+@memox
+def climbStairs(n, current=[]):
+    """
+    :type n: int
+    :rtype: int
+    """
+    print 'working on size {} for path {}'.format(n, current)
+    if n == 0:
+        return 1
+    num = climbStairs(n-1, current + [1])
+    if n >= 2:
+        num += climbStairs(n-2, current + [2])
+    return num
 # print new(5)
 
 
@@ -114,7 +114,6 @@ def climbStairs(n):
 # print climbStairs(5)
 
 
-
 #solution 5  dynamic programming O(n) running time, O(1) space
 def climbStairs(n):
     minus_1, minus_2 = 1, 1
@@ -123,15 +122,11 @@ def climbStairs(n):
     return minus_1
 
 
-
 #solution 6 using fibonacci closed form   O(1) running time, O(1) space
 def f(k):
-  """ be careful with the OverflowError: (34, 'Result too large')"""
     sqt = 5**0.5
-    k = n + 1 #
-    return int(((1 + sqt)**k - (1 - sqt)**k)/((2**k)*(sqt)))
-
-
+    k = n + 1
+    return int(((1 + sqt) ** k - (1 - sqt) ** k)/((2**k) * (sqt)))
 
 print climbStairs(0) #1
 print climbStairs(1) #1
