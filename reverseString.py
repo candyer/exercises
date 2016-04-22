@@ -10,7 +10,7 @@ def reverseString(s):
     """
     
     #solution 1
-    return "".join(s[::-1])
+    return s[::-1]
 
     #solution 2
     return "".join(reversed(list(s)))
