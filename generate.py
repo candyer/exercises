@@ -21,7 +21,7 @@ def generate(numRows):
             for j in xrange(1,len(res[i])-1):
                 res[i][j] = res[i-1][j-1]+ res[i-1][j]
     return res
-
+    
 # import unittest
 # class MyTest(unittest.TestCase):  
 #     def testZero(self):
