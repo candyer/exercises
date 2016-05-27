@@ -79,7 +79,7 @@ def climbStairs(n, current=[]):
 
 #solution 4-1 dynamic programming using memoization  O(n) running time, O(n) space
 def memox(n):
-    mrmory = {}
+    memory = {}
 
     def _(n):
         if n in memory:
