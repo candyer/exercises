@@ -78,30 +78,28 @@ def climbStairs(n, current=[]):
 
 
 #solution 4-1 dynamic programming using memoization  O(n) running time, O(n) space
-def memox(n):
-    memory = {}
-
-    def _(n):
-        if n in memory:
-            return memory[n]
-        memory[n] = num
-
-    return -()
-
-@memox
+def memoize(f):
+    memo = {}
+    def helper(x,current=[]):
+        if x not in memo:            
+            memo[x] = f(x,current=[])
+        return memo[x]
+    return helper
+    
+@memoize
 def climbStairs(n, current=[]):
     """
     :type n: int
     :rtype: int
     """
-    print 'working on size {} for path {}'.format(n, current)
+    # print 'working on size {} for path {}'.format(n, current)
     if n == 0:
         return 1
     num = climbStairs(n-1, current + [1])
     if n >= 2:
         num += climbStairs(n-2, current + [2])
     return num
-# print new(5)
+# print climbStairs(100)
 
 
 #solution 4-2 dynamic programming using memoization  O(n) running time, O(n) space
