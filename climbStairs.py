@@ -120,7 +120,7 @@ def climbStairs(n):
     return minus_1
 
 
-#solution 6 using fibonacci closed form   O(1) running time, O(1) space
+#solution 6 using fibonacci closed form   O(log(n)) running time, O(1) space
 def f(k):
     sqt = 5**0.5
     k = n + 1
