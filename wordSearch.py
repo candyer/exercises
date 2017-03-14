@@ -20,7 +20,6 @@ def solve(d, n):
 
 
 
-
 # large input
 def solve(d, n):
 	a = [
