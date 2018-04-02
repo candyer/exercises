@@ -62,6 +62,24 @@ def bathroomStalls(n, k):
 	r = count[k - 1] - l - 1
 	return ' '.join([str(l), str(r)])
 
+
+###################################
+# for large input (1 ≤ N ≤ 10^18) #
+##################################
+
+def bathroomStalls(n, k):
+	d = {n : 1}
+	while k > 0:
+		maxi = max(d)
+		count = d[maxi]
+		hi, lo = maxi / 2, (maxi - 1) / 2
+		d[hi] = d.get(hi, 0) + d[maxi]
+		d[lo] = d.get(lo, 0) + d[maxi]
+		del d[maxi]
+		k -= count
+	return '%d %d' % (hi, lo)
+
+
 if __name__ == '__main__':
 	t = int(raw_input())
 	for i in range(1,t+1):
